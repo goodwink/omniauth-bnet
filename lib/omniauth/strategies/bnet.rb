@@ -50,6 +50,7 @@ module OmniAuth
         access_token.options[:mode] = :query
 
         @raw_info = access_token.get('account/user').parsed
+        @raw_info["wow"] = access_token.get('wow/user/characters').parsed
       end
 
       private
